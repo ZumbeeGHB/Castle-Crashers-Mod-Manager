@@ -35,16 +35,7 @@ namespace ModManager
             dataFolder = Properties.Settings.Default.ccDataPath;
             lightMode = Properties.Settings.Default.lightMode;
             UpdateDisplayType();
-
-            if (Directory.Exists(modFolder))
-            {
-                foreach (string folder in  Directory.GetDirectories(modFolder))
-                {
-                    // Add new mod to list
-                    modList.Items.Add(ParseMod(folder));
-                }
-            }
-            else Directory.CreateDirectory(modFolder);
+            RefreshModList();
             loading = false;
         }
         private ListViewItem ParseMod(string path)
@@ -69,6 +60,19 @@ namespace ModManager
             darkModeToolStripMenuItem.Checked = !lightMode;
 
             // TO DO: Actually uhhhh make this work by updating all the UI stuff
+        }
+        public void RefreshModList()
+        {
+            modList.Items.Clear();
+            if (Directory.Exists(modFolder))
+            {
+                foreach (string folder in Directory.GetDirectories(modFolder))
+                {
+                    // Add new mod to list
+                    modList.Items.Add(ParseMod(folder));
+                }
+            }
+            else Directory.CreateDirectory(modFolder);
         }
 
         private void openCCDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -148,6 +152,12 @@ namespace ModManager
         {
 
         }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RefreshModList();
+        }
+
         void CopyDirectory(string sourceDir, string destinationDir, bool directoriesOnly)
         {
             if (!Directory.Exists(destinationDir)) Directory.CreateDirectory(destinationDir);

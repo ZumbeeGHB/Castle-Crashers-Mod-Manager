@@ -45,6 +45,7 @@ namespace ModManager
             this.importMods = new System.Windows.Forms.Button();
             this.progressLabel = new System.Windows.Forms.Label();
             this.mainProgress = new System.Windows.Forms.ProgressBar();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,16 +60,17 @@ namespace ModManager
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(920, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(920, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openCCDirectoryToolStripMenuItem});
+            this.openCCDirectoryToolStripMenuItem,
+            this.refreshToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openCCDirectoryToolStripMenuItem
@@ -84,14 +86,14 @@ namespace ModManager
             this.lightModeToolStripMenuItem,
             this.darkModeToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // lightModeToolStripMenuItem
             // 
             this.lightModeToolStripMenuItem.CheckOnClick = true;
             this.lightModeToolStripMenuItem.Name = "lightModeToolStripMenuItem";
-            this.lightModeToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.lightModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.lightModeToolStripMenuItem.Text = "Light Mode";
             this.lightModeToolStripMenuItem.CheckedChanged += new System.EventHandler(this.switchDisplayColorToolStripMenuItem_CheckedChanged);
             // 
@@ -99,7 +101,7 @@ namespace ModManager
             // 
             this.darkModeToolStripMenuItem.CheckOnClick = true;
             this.darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
-            this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.darkModeToolStripMenuItem.Text = "Dark Mode";
             this.darkModeToolStripMenuItem.CheckedChanged += new System.EventHandler(this.switchDisplayColorToolStripMenuItem_CheckedChanged);
             // 
@@ -109,7 +111,7 @@ namespace ModManager
             this.joinTheModdingDiscordToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // joinTheModdingDiscordToolStripMenuItem
@@ -198,6 +200,14 @@ namespace ModManager
             this.mainProgress.Size = new System.Drawing.Size(312, 20);
             this.mainProgress.TabIndex = 6;
             // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
             // CCModManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -248,6 +258,7 @@ namespace ModManager
         private System.Windows.Forms.Button importMods;
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.ProgressBar mainProgress;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
     }
 }
 
