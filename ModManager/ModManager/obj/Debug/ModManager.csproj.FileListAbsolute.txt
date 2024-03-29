@@ -1,0 +1,11 @@
+C:\Users\Zumbe\source\repos\ModManager\ModManager\bin\Debug\ModManager.exe.config
+C:\Users\Zumbe\source\repos\ModManager\ModManager\bin\Debug\ModManager.exe
+C:\Users\Zumbe\source\repos\ModManager\ModManager\bin\Debug\ModManager.pdb
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.csprojAssemblyReference.cache
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.Form1.resources
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.Properties.Resources.resources
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.csproj.GenerateResource.cache
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.csproj.CoreCompileInputs.cache
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.exe
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.pdb
+C:\Users\Zumbe\source\repos\ModManager\ModManager\obj\Debug\ModManager.AboutBox1.resources
