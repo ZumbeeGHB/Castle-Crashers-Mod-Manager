@@ -89,7 +89,6 @@ namespace ModManager
                 if (Directory.Exists(backupFolder)) Directory.Delete(backupFolder, true);
                 mainProgress.Value = 0;
                 mainProgress.Maximum = DirectoryFileMeasurement(dataFolder, false);
-                progressLabel.Text = "Saving files to 'Backup' Folder...";
                 CopyDirectory(dataFolder, backupFolder, false);
             }
         }
@@ -116,7 +115,7 @@ namespace ModManager
                 return;
             }
 
-            if (Directory.Exists(dataFolder) && dataFolder.EndsWith("data")) 
+            if (Directory.Exists(dataFolder)) 
             {
                 // Warn the user if more than one mod is checked
                 if (modList.CheckedItems.Count > 1)
@@ -130,21 +129,19 @@ namespace ModManager
                 Directory.Delete(dataFolder, true);
                 mainProgress.Value = 0;
                 mainProgress.Maximum = DirectoryFileMeasurement(backupFolder, false);
-                progressLabel.Text = "Restoring original files...";
                 CopyDirectory(backupFolder, dataFolder, false);
                 foreach (ListViewItem item in modList.CheckedItems)
                 {
                     // Import each mod
                     mainProgress.Value = 0;
                     mainProgress.Maximum = DirectoryFileMeasurement(modFolder + $"\\{item.Text}", true);
-                    progressLabel.Text = $"Installing '{item.Text}'...";
                     CopyDirectory(modFolder + $"\\{item.Text}", dataFolder, true);
                 }
             }
             else
             {
                 // If no data directory is found, or doesn't end with 'data', show error.
-                throw new DirectoryNotFoundException($"Failed to find Castle Crashers 'data' folder");
+                MessageBox.Show($"Failed to find Castle Crashers 'data' folder...");
             }
         }
 

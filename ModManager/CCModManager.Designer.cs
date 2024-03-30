@@ -32,6 +32,7 @@ namespace ModManager
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openCCDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@ namespace ModManager
             this.importMods = new System.Windows.Forms.Button();
             this.progressLabel = new System.Windows.Forms.Label();
             this.mainProgress = new System.Windows.Forms.ProgressBar();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,9 +76,17 @@ namespace ModManager
             // openCCDirectoryToolStripMenuItem
             // 
             this.openCCDirectoryToolStripMenuItem.Name = "openCCDirectoryToolStripMenuItem";
-            this.openCCDirectoryToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.openCCDirectoryToolStripMenuItem.Text = "Open Castle Crashers Directory";
+            this.openCCDirectoryToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.openCCDirectoryToolStripMenuItem.Text = "Set Castle Crashers Path";
             this.openCCDirectoryToolStripMenuItem.Click += new System.EventHandler(this.openCCDirectoryToolStripMenuItem_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -93,7 +101,7 @@ namespace ModManager
             // 
             this.lightModeToolStripMenuItem.CheckOnClick = true;
             this.lightModeToolStripMenuItem.Name = "lightModeToolStripMenuItem";
-            this.lightModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lightModeToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.lightModeToolStripMenuItem.Text = "Light Mode";
             this.lightModeToolStripMenuItem.CheckedChanged += new System.EventHandler(this.switchDisplayColorToolStripMenuItem_CheckedChanged);
             // 
@@ -101,7 +109,7 @@ namespace ModManager
             // 
             this.darkModeToolStripMenuItem.CheckOnClick = true;
             this.darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
-            this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.darkModeToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.darkModeToolStripMenuItem.Text = "Dark Mode";
             this.darkModeToolStripMenuItem.CheckedChanged += new System.EventHandler(this.switchDisplayColorToolStripMenuItem_CheckedChanged);
             // 
@@ -199,14 +207,6 @@ namespace ModManager
             this.mainProgress.Name = "mainProgress";
             this.mainProgress.Size = new System.Drawing.Size(312, 20);
             this.mainProgress.TabIndex = 6;
-            // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(296, 26);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // CCModManager
             // 
