@@ -46,6 +46,7 @@ namespace ModManager
             this.importMods = new System.Windows.Forms.Button();
             this.progressLabel = new System.Windows.Forms.Label();
             this.mainProgress = new System.Windows.Forms.ProgressBar();
+            this.openModFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +69,7 @@ namespace ModManager
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openCCDirectoryToolStripMenuItem,
+            this.openModFolderToolStripMenuItem,
             this.refreshToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -175,6 +177,7 @@ namespace ModManager
             this.modList.TabIndex = 3;
             this.modList.UseCompatibleStateImageBehavior = false;
             this.modList.View = System.Windows.Forms.View.List;
+            this.modList.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.modList_ItemChecked);
             // 
             // columnMain
             // 
@@ -207,6 +210,14 @@ namespace ModManager
             this.mainProgress.Name = "mainProgress";
             this.mainProgress.Size = new System.Drawing.Size(312, 20);
             this.mainProgress.TabIndex = 6;
+            // 
+            // openModFolderToolStripMenuItem
+            // 
+            this.openModFolderToolStripMenuItem.Name = "openModFolderToolStripMenuItem";
+            this.openModFolderToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openModFolderToolStripMenuItem.Size = new System.Drawing.Size(262, 26);
+            this.openModFolderToolStripMenuItem.Text = "Open Mod Folder";
+            this.openModFolderToolStripMenuItem.Click += new System.EventHandler(this.openModFolderToolStripMenuItem_Click);
             // 
             // CCModManager
             // 
@@ -259,6 +270,7 @@ namespace ModManager
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.ProgressBar mainProgress;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openModFolderToolStripMenuItem;
     }
 }
 

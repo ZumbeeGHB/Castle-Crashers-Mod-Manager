@@ -36,6 +36,7 @@ namespace ModManager
             lightMode = Properties.Settings.Default.lightMode;
             UpdateDisplayType();
             RefreshModList();
+            UpdateImportButtonText();
             loading = false;
         }
         private ListViewItem ParseMod(string path)
@@ -60,6 +61,14 @@ namespace ModManager
             darkModeToolStripMenuItem.Checked = !lightMode;
 
             // TO DO: Actually uhhhh make this work by updating all the UI stuff
+        }
+        public void UpdateImportButtonText()
+        {
+            importMods.Text = "Restore To Vanilla";
+            if (modList.CheckedItems.Count > 0)
+            {
+                importMods.Text = "Import Mods";
+            }
         }
         public void RefreshModList()
         {
@@ -153,6 +162,28 @@ namespace ModManager
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RefreshModList();
+        }
+
+        private void modList_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            UpdateImportButtonText();
+        }
+
+        private void openModFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(modFolder)) return;
+            var process = new Process();
+            try
+            {
+                process.StartInfo = new ProcessStartInfo()
+                {
+                    UseShellExecute = true,
+                    FileName = modFolder
+                };
+                process.Start();
+            }
+            catch { }
+            process.Dispose();
         }
 
         void CopyDirectory(string sourceDir, string destinationDir, bool directoriesOnly)
