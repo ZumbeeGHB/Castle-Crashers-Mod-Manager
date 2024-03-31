@@ -104,5 +104,8 @@
   <ItemGroup>
     <None Include="Resources\AboutLabel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ModManagerBG2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
