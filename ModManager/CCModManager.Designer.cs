@@ -183,7 +183,7 @@ namespace ModManager
             this.modList.Location = new System.Drawing.Point(18, 127);
             this.modList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.modList.Name = "modList";
-            this.modList.Size = new System.Drawing.Size(500, 348);
+            this.modList.Size = new System.Drawing.Size(474, 348);
             this.modList.TabIndex = 3;
             this.modList.UseCompatibleStateImageBehavior = false;
             this.modList.View = System.Windows.Forms.View.List;
@@ -196,12 +196,12 @@ namespace ModManager
             // importMods
             // 
             this.importMods.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.importMods.Location = new System.Drawing.Point(521, 127);
+            this.importMods.Location = new System.Drawing.Point(512, 127);
             this.importMods.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.importMods.Name = "importMods";
             this.importMods.Size = new System.Drawing.Size(161, 30);
             this.importMods.TabIndex = 4;
-            this.importMods.Text = "Import Mods";
+            this.importMods.Text = "Install Mod";
             this.importMods.UseVisualStyleBackColor = true;
             this.importMods.Click += new System.EventHandler(this.importMods_Click);
             // 
