@@ -25,13 +25,13 @@ namespace ModManager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool lightMode {
+        [global::System.Configuration.DefaultSettingValueAttribute("Light")]
+        public string themeType {
             get {
-                return ((bool)(this["lightMode"]));
+                return ((string)(this["themeType"]));
             }
             set {
-                this["lightMode"] = value;
+                this["themeType"] = value;
             }
         }
         

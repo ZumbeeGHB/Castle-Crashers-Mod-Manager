@@ -19,7 +19,7 @@ namespace ModManager.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap About {
+        internal static System.Drawing.Bitmap About_Dark {
             get {
-                object obj = ResourceManager.GetObject("About", resourceCulture);
+                object obj = ResourceManager.GetObject("About_Dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AboutLabel {
+        internal static System.Drawing.Bitmap About_Light {
             get {
-                object obj = ResourceManager.GetObject("AboutLabel", resourceCulture);
+                object obj = ResourceManager.GetObject("About_Light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CCModManagerLogo1 {
+        internal static System.Drawing.Bitmap CCModManagerLogo_Dark {
             get {
-                object obj = ResourceManager.GetObject("CCModManagerLogo1", resourceCulture);
+                object obj = ResourceManager.GetObject("CCModManagerLogo_Dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Header {
+        internal static System.Drawing.Bitmap CCModManagerLogo_Light {
             get {
-                object obj = ResourceManager.GetObject("Header", resourceCulture);
+                object obj = ResourceManager.GetObject("CCModManagerLogo_Light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Header1 {
+        internal static System.Drawing.Bitmap ModManagerBG_A_Dark {
             get {
-                object obj = ResourceManager.GetObject("Header1", resourceCulture);
+                object obj = ResourceManager.GetObject("ModManagerBG_A_Dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ModManagerBG {
+        internal static System.Drawing.Bitmap ModManagerBG_A_Light {
             get {
-                object obj = ResourceManager.GetObject("ModManagerBG", resourceCulture);
+                object obj = ResourceManager.GetObject("ModManagerBG_A_Light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ModManagerBG1 {
+        internal static System.Drawing.Bitmap ModManagerBG_B_Dark {
             get {
-                object obj = ResourceManager.GetObject("ModManagerBG1", resourceCulture);
+                object obj = ResourceManager.GetObject("ModManagerBG_B_Dark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace ModManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ModManagerBG2 {
+        internal static System.Drawing.Bitmap ModManagerBG_B_Light {
             get {
-                object obj = ResourceManager.GetObject("ModManagerBG2", resourceCulture);
+                object obj = ResourceManager.GetObject("ModManagerBG_B_Light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

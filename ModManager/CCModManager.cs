@@ -18,7 +18,7 @@ namespace ModManager
         bool loading;
         string modFolder, backupFolder, dataFolder, userDataFolder;
         string importText;
-        bool lightMode;
+        string theme;
         public CCModManager()
         {
             InitializeComponent();
@@ -28,18 +28,24 @@ namespace ModManager
         {
             loading = true;
 
-            // Define paths for Castle Crashers' Vanilla Data and Mods
+            // Define paths for Castle Crashers
             modFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Mods";
             backupFolder = AppDomain.CurrentDomain.BaseDirectory + "\\Backup";
             userDataFolder = $"C:\\Program Files (x86)\\Steam\\userdata";
 
             // Load Settings
             dataFolder = Properties.Settings.Default.ccDataPath;
-            lightMode = Properties.Settings.Default.lightMode;
+            theme = Properties.Settings.Default.themeType;
+            if (!menuThemes.ContainsKey(theme)) theme = "Light";
+
+            // Update everything else
             importText = importMods.Text;
-            UpdateDisplayType();
+            themeBox.Items.Clear();
+            themeBox.Items.AddRange(menuThemes.Keys.ToArray());
+            themeBox.SelectedItem = theme;
             RefreshModList();
             UpdateImportButtonText(false);
+            UpdateDisplayTheme();
             loading = false;
         }
         private void openCCDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,29 +79,49 @@ namespace ModManager
         }
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutBox1 box = new AboutBox1();
+            AboutBox1 box = new AboutBox1(this);
             box.ShowDialog();
         }
-        private void switchDisplayColorToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        private void themeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Use loading bool to prevent this function from repeating itself
             if (loading) return;
             loading = true;
-            lightMode = !lightMode;
-            Properties.Settings.Default.lightMode = lightMode;
+            theme = themeBox.Text;
+            Properties.Settings.Default.themeType = theme;
             Properties.Settings.Default.Save();
-            UpdateDisplayType();
+            UpdateDisplayTheme();
             loading = false;
         }
-        public void UpdateDisplayType()
+        public void UpdateDisplayTheme()
         {
-            // Update the menu strip buttons
-            lightModeToolStripMenuItem.Enabled = !lightMode;
-            lightModeToolStripMenuItem.Checked = lightMode;
-            darkModeToolStripMenuItem.Enabled = lightMode;
-            darkModeToolStripMenuItem.Checked = !lightMode;
+            Color backCol = menuThemes[theme][0];
+            Color mainCol = menuThemes[theme][1];
+            Color textCol = menuThemes[theme][2];
 
-            // TO DO: Actually uhhhh make this work by updating all the UI stuff
+            // Images
+            try { topCornerBG.BackgroundImage = (Image)Properties.Resources.ResourceManager.GetObject($"ModManagerBG_A_{theme}"); }
+            catch { MessageBox.Show("Failed to load Top-Left Corner Image..."); }
+            try { bottomCornerBG.BackgroundImage = (Image)Properties.Resources.ResourceManager.GetObject($"ModManagerBG_B_{theme}"); }
+            catch { MessageBox.Show("Failed to load Bottom-Left Corner Image..."); }
+            try { logoImage.BackgroundImage = (Image)Properties.Resources.ResourceManager.GetObject($"CCModManagerLogo_{theme}"); }
+            catch { MessageBox.Show("Failed to load Logo Image..."); }
+
+            // Background Color
+            BackColor = backCol;
+
+            // Main Colors
+            modList.BackColor = mainCol;
+            importMods.BackColor = mainCol;
+            runCC.BackColor = mainCol;
+            modDescription.BackColor = mainCol;
+            modIcon.BackColor = mainCol;
+
+            // Text Colors
+            modList.ForeColor = textCol;
+            modDescription.ForeColor = textCol;
+            importMods.ForeColor = textCol;
+            runCC.ForeColor = textCol;
+            progressLabel.ForeColor = textCol;
         }
         public void UpdateImportButtonText(bool modChecked)
         {
@@ -297,7 +323,6 @@ namespace ModManager
             }
             else MessageBox.Show($"No Directory found at:{Environment.NewLine}{userDataFolder}");
         }
-
         void OpenLink(string target)
         {
             try
@@ -326,5 +351,20 @@ namespace ModManager
             }
             return count;
         }
+        public Dictionary<string, Color[]> menuThemes = new Dictionary<string, Color[]>()
+        {
+            {"Light", new Color[3] 
+            {
+                Color.FromArgb(255, 255, 255), // Back Color
+                Color.FromArgb(255, 255, 255), // Main Color
+                Color.FromArgb(0, 0, 0) // Text Color
+            }},
+            {"Dark", new Color[3]
+            {
+                Color.FromArgb(45, 45, 45), // Back Color
+                Color.FromArgb(45, 45, 45), // Main Color
+                Color.FromArgb(255, 255, 255) // Text Color
+            }}
+        };
     }
 }
