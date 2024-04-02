@@ -16,7 +16,7 @@ namespace ModManager
         {
             InitializeComponent();
             main = parent;
-            this.Text = String.Format("About {0}", AssemblyTitle);
+            this.Text = String.Format("About ZumbeeStuff Mod Manager for Castle Crashers", AssemblyTitle);
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             //this.labelProductName.Text = AssemblyProduct;
             //this.labelCopyright.Text = AssemblyCopyright;

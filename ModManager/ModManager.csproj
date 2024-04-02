@@ -115,6 +115,7 @@
     <Resource Include="Resources\ModManagerBG-B_Dark.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\CCModManagerIcon.png" />
     <Content Include="Resources\ModManagerBG-A_Dark.png" />
     <Content Include="Resources\ModManagerBG-B_Light.png" />
   </ItemGroup>
